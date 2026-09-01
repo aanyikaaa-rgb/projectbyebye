@@ -30,25 +30,27 @@
       badge: 'ทะเล',
       location: 'กระบี่, ภาคใต้',
       duration: '2 วัน 1 คืน',
-      style: 'ทะเล & ชายหาด',
+      style: 'ทะเล & พักผ่อน',
       budget: '฿4,200 / คน',
-      desc: 'ทริปทะเลกระบี่ที่งดงาม เที่ยวเกาะ ดำน้ำ ชมปะการัง และสัมผัสธรรมชาติริมทะเลอันดามัน',
+      desc: 'สัมผัสความงดงามของหาดไร่เลย์ อ่าวมาหยา น้ำทะเลมรกตใสสะอาด และกิจกรรมดำน้ำตื้นชมปะการัง',
       days: [
-        { title: 'วันที่ 1 — เกาะพีพีและอ่าวมาหยา', items: 'เช้า: เดินทางด้วยเรือจากท่าเรือ • กลางวัน: อ่าวมาหยา ดำน้ำตื้น • บ่าย: เกาะพีพีดอน เดินชมวิว • เย็น: ชมพระอาทิตย์ตกจากเกาะพีพี' },
-        { title: 'วันที่ 2 — 4 เกาะ & หาดไร่เลย์', items: 'เช้า: ทริป 4 เกาะ ดำน้ำปะการัง • กลางวัน: หาดไร่เลย์ • บ่าย: Kayak สำรวจถ้ำ • เย็น: เดินทางกลับ' }
+        { title: 'วันที่ 1 — อ่าวมาหยา & หาดไร่เลย์', items: 'เช้า: นั่งเรือสปีดโบ๊ทสู่อ่าวมาหยา • เที่ยง: อาหารกลางวันบุฟเฟต์ริมหาด • บ่าย: พายเรือคายัคหาดไร่เลย์ • เย็น: ชมพระอาทิตย์ตกอ่าวนาง' },
+        { title: 'วันที่ 2 — สระมรกต & กลับ', items: 'เช้า: เล่นน้ำสระมรกตและน้ำพุร้อนเค็ม • กลางวัน: ซื้อของฝากเม็ดมะม่วงหิมพานต์ • บ่าย: เดินทางกลับ' }
       ]
     },
     ayutthaya: {
       title: 'อยุธยา One Day Trip',
       img: 'assets/images/ayutthaya_trip.jpg',
       badge: 'วัฒนธรรม',
-      location: 'พระนครศรีอยุธยา',
-      duration: '1 วัน',
+      location: 'พระนครศรีอยุธยา, ภาคกลาง',
+      duration: '1 วัน (One Day Trip)',
       style: 'ประวัติศาสตร์ & วัฒนธรรม',
       budget: '฿1,200 / คน',
-      desc: 'เดย์ทริปสุดคุ้มจากกรุงเทพฯ สู่อดีตราชธานีสยามที่ยิ่งใหญ่ เรียนรู้ประวัติศาสตร์ 417 ปีในวันเดียว',
+      desc: 'เที่ยวชมมรดกโลกอยุธยา ตามรอยประวัติศาสตร์ กราบพระโบราณ ล่องเรือชมทิวทัศน์แม่น้ำเจ้าพระยา และชิมกุ้งเผาตัวโต',
       days: [
-        { title: 'วันเดียวเต็ม — อยุธยา', items: 'เช้า: เดินทางจากกรุงเทพฯ รถไฟ / รถยนต์ (80 กม.) • สาย: วิหารพระมงคลบพิตร วัดพระศรีสรรเพชญ์ • กลางวัน: อาหารพื้นถิ่น หมูปิ้ง กุ้งเผา • บ่าย: วัดมหาธาตุ พระพุทธรูปในต้นโพธิ์ วัดไชยวัฒนาราม • เย็น: นั่งเรือชมวัดริมน้ำ • ค่ำ: เดินทางกลับกรุงเทพฯ' }
+        { title: 'เช้า — สาย', items: '08:00 ออกเดินทางจากกรุงเทพฯ • 09:30 ไหว้พระวัดใหญ่ไชยมงคล และวัดมหาธาตุ (เศียรพระในรากไม้)' },
+        { title: 'เที่ยง — บ่าย', items: '12:00 ทานกุ้งแม่น้ำเผาย่านตลาดกลาง • 14:00 ชมความงดงามวัดพระศรีสรรเพชญ์ และวัดไชยวัฒนาราม' },
+        { title: 'เย็น', items: '17:00 ล่องเรือรอบเกาะเมืองชมอาทิตย์ตก • 19:00 เดินทางกลับกรุงเทพฯ' }
       ]
     },
     pai: {
@@ -57,12 +59,12 @@
       badge: 'ธรรมชาติ',
       location: 'แม่ฮ่องสอน, ภาคเหนือ',
       duration: '3 วัน 2 คืน',
-      style: 'ธรรมชาติ & พักผ่อน',
+      style: 'ธรรมชาติ & สโลว์ไลฟ์',
       budget: '฿4,800 / คน',
-      desc: 'ทริปปายสุดชิลล์ ท่ามกลางธรรมชาติป่าเขา อากาศเย็นสบาย น้ำตก ทุ่งดอกไม้ และบรรยากาศเมืองเล็กๆ ที่เป็นเอกลักษณ์',
+      desc: 'เมืองสโลว์ไลฟ์กลางหุบเขา อากาศดีตลอดปี ชมวิวทะเลหมอกหยุนไหล กองลานปาย และสะพานประวัติศาสตร์',
       days: [
-        { title: 'วันที่ 1 — เดินทางสู่ปาย', items: 'เช้า: ออกจากเชียงใหม่ ผ่าน 762 โค้ง • กลางวัน: ถึงปาย เช็คอินที่พัก • บ่าย: เดินเล่นถนนเจดีย์ เช็กอินจุดถ่ายรูป • เย็น: ตลาดนัดปาย Street Food' },
-        { title: 'วันที่ 2 — สำรวจธรรมชาติรอบปาย', items: 'เช้า: ดูทะเลหมอกยามเช้า • สาย: น้ำตกโมพาแง่ อุณหภูมิเย็น • กลางวัน: Coffee & โกโก้ฟาร์ม • บ่าย: สะพานประวัติศาสตร์ ถ่ายรูป • เย็น: งาน Walking Street ปาย' },
+        { title: 'วันที่ 1 — สู่เมืองปาย & ถนนคนเดิน', items: 'เช้า: เดินทางจากเชียงใหม่ผ่าน 762 โค้ง • เที่ยง: เช็คอินปาย • บ่าย: สะพานประวัติศาสตร์ท่าปาย • เย็น: ถนนคนเดินปาย ชิมอาหารพื้นบ้าน' },
+        { title: 'วันที่ 2 — ทะเลหมอก & กองลาน', items: 'เช้า: ชมทะเลหมอกหยุนไหล จิบชาจีน • กลางวัน: หมู่บ้านสันติชล • บ่าย: กองลาน (Pai Canyon) • เย็น: ชมอาทิตย์ตกวัดพระธาตุแม่เย็น' },
         { title: 'วันที่ 3 — พักผ่อนและเดินทางกลับ', items: 'เช้า: ชมทุ่งดอกทานตะวัน (ตามฤดูกาล) • กลางวัน: อาหารเช้าช้าๆ คาเฟ่ปาย • บ่าย: เดินทางกลับเชียงใหม่' }
       ]
     },
@@ -153,20 +155,6 @@
       });
     });
 
-    // Load More (simulate)
-    var loadBtn = document.getElementById('loadMoreBtn');
-    if (loadBtn) {
-      loadBtn.addEventListener('click', function () {
-        loadBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:17px;height:17px;animation:spin 1s linear infinite"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg> กำลังโหลด...';
-        setTimeout(function () {
-          loadBtn.innerHTML = '✓ แสดงครบทุกทริปแล้ว';
-          loadBtn.disabled = true;
-          loadBtn.style.opacity = '0.5';
-          loadBtn.style.cursor = 'default';
-        }, 1500);
-      });
-    }
-
     // Modal
     initModal();
 
@@ -182,23 +170,17 @@
     allCards.forEach(function (card, i) {
       var dur = card.dataset.duration || '';
       var style = card.dataset.style || '';
-      var budgetKey = card.dataset.budget || '';
-      var name = (card.dataset.name || '').toLowerCase();
       var budgetNum = parseInt(card.dataset.budgetNum || '0', 10);
+      var name = (card.dataset.name || '').toLowerCase();
 
-      // Duration match
       var durMatch = !currentFilters.duration || dur === currentFilters.duration;
-
-      // Style match
       var styleMatch = !currentFilters.style || style === currentFilters.style;
 
-      // Budget match
       var budgetMatch = true;
       if (currentFilters.budget === 'low') budgetMatch = budgetNum < 2000;
       else if (currentFilters.budget === 'mid') budgetMatch = budgetNum >= 2000 && budgetNum <= 5000;
       else if (currentFilters.budget === 'high') budgetMatch = budgetNum > 5000;
 
-      // Search match
       var searchMatch = !currentFilters.search || name.includes(currentFilters.search);
 
       var show = durMatch && styleMatch && budgetMatch && searchMatch;
@@ -221,9 +203,6 @@
 
     var noResults = document.getElementById('tripsNoResults');
     if (noResults) noResults.style.display = visible === 0 ? 'block' : 'none';
-
-    var loadMore = document.getElementById('tripsLoadMore');
-    if (loadMore) loadMore.style.display = visible === 0 ? 'none' : 'flex';
   }
 
   function resetAll() {
