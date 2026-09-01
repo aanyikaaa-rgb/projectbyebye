@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="ค้นหาที่พักและร้านอาหารทั่วไทย - รวมรีสอร์ท โรงแรมสวย ร้านอาหารอร่อย คาเฟ่ยอดนิยมทั่วประเทศไทย">
+  <meta name="keywords"
+    content="ที่พัก, ร้านอาหาร, โรงแรม, รีสอร์ท, คาเฟ่, ที่พักเชียงใหม่, ที่พักกระบี่, ร้านอร่อยอยุธยา, เที่ยวไทย">
+  <title>ที่พักและร้านอาหาร - เที่ยวเมืองไทย</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/hotels.css">
+</head>
+
+<body>
+
+  <!-- =========================================================================
+       HEADER (shared)
+       ========================================================================= -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-container">
+      <a href="index.html" class="header-brand" aria-label="เที่ยวเมืองไทย หน้าแรก">
+        <div class="brand-logo-circle">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M3 18l5-7 4 5 3-4 6 6H3z" />
+            <circle cx="8" cy="8" r="2.5" />
+          </svg>
+        </div>
+        <span class="brand-text">เที่ยวเมืองไทย</span>
+      </a>
+
+      <nav class="header-nav" aria-label="Main Navigation">
+        <a href="index.html" class="header-nav-link">หน้าแรก</a>
+        <a href="destinations.html" class="header-nav-link">สถานที่ท่องเที่ยว</a>
+        <a href="trips.html" class="header-nav-link">ทริปแนะนำ</a>
+        <a href="hotels.html" class="header-nav-link active">ที่พักและร้านอาหาร</a>
+        <button class="header-nav-link" onclick="window.location='travel-info.html'">ข้อมูลการเดินทาง</button>
+      </nav>
+
+      <button class="header-contact-btn" id="headerContactBtn" aria-label="ติดต่อเรา" onclick="window.location='contact.html'">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round">
+          <path
+            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+          </path>
+        </svg>
+        <span>ติดต่อ</span>
+      </button>
+
+      <!-- Mobile Top Bar -->
+      <div class="mobile-top-bar">
+        <a href="index.html" class="header-brand" aria-label="เที่ยวเมืองไทย" style="display: flex;">
+          <div class="brand-logo-circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M3 18l5-7 4 5 3-4 6 6H3z" />
+              <circle cx="8" cy="8" r="2.5" />
+            </svg>
+          </div>
+          <span
+            style="font-family: var(--font-heading); font-weight: 700; font-size: 1.15rem; color: var(--text-primary);">เที่ยวเมืองไทย</span>
+        </a>
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="เปิดเมนู" aria-expanded="false">
+          <div class="hamburger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer-overlay" id="drawerOverlay"></div>
+  <aside class="mobile-drawer" id="mobileDrawer" aria-label="Mobile Navigation Drawer">
+    <div>
+      <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 28px;">
+        <div class="brand-logo-circle" style="width: 40px; height: 40px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" style="width: 22px; height: 22px;">
+            <path d="M3 18l5-7 4 5 3-4 6 6H3z" />
+            <circle cx="8" cy="8" r="2.5" />
+          </svg>
+        </div>
+        <span
+          style="font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: var(--text-primary);">เที่ยวเมืองไทย</span>
+      </div>
+      <ul class="drawer-nav-list">
+        <li><a href="index.html" class="drawer-nav-link">หน้าแรก</a></li>
+        <li><a href="destinations.html" class="drawer-nav-link">สถานที่ท่องเที่ยว</a></li>
+        <li><a href="trips.html" class="drawer-nav-link">ทริปแนะนำ</a></li>
+        <li><a href="hotels.html" class="drawer-nav-link active">ที่พักและร้านอาหาร</a></li>
+        <li><a href="travel-info.html" class="drawer-nav-link">ข้อมูลการเดินทาง</a></li>
+        <li><a href="#" class="drawer-nav-link">ติดต่อเรา</a></li>
+      </ul>
+    </div>
+    <div class="drawer-footer">
+      <p style="font-size: 0.85rem; color: var(--text-secondary);">สัมผัสเสน่ห์ท่องเที่ยวทั่วไทย</p>
+    </div>
+  </aside>
+
+  <!-- =========================================================================
+       HERO BANNER
+       ========================================================================= -->
+  <section class="hotels-hero">
+    <div class="hotels-hero-bg">
+      <img src="assets/images/hotels_hero.jpg" alt="รีสอร์ทสวยบรรยากาศดี" loading="eager">
+      <div class="hotels-hero-overlay"></div>
+    </div>
+
+    <div class="container hotels-hero-content">
+      <div class="hotels-hero-box reveal reveal-up">
+        <h1 class="hotels-hero-title">
+          ค้นหาสถานที่ท่องเที่ยว<br>
+          สวยทั่วไทย ไม่ไปไม่รู้
+        </h1>
+        <p class="hotels-hero-subtitle">รวมแหล่งท่องเที่ยวแนะนำ อัปเดตใหม่ทุกสัปดาห์</p>
+
+        <div class="hotels-search-box">
+          <input type="text" id="hotelsHeroSearch" class="hotels-search-input"
+            placeholder="ค้นหาปลายทาง หรือ กิจกรรม..." aria-label="ค้นหาที่พักและร้านอาหาร">
+          <button class="hotels-search-btn" id="hotelsSearchBtn" aria-label="ค้นหา">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <circle cx="11" cy="11" r="8" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SEARCH & INTERACTIVE MAP FILTER SECTION
+       ========================================================================= -->
+  <section class="hotels-filter-section">
+    <div class="container">
+      <div class="hotels-filter-grid">
+
+        <!-- Left Column: Search Form -->
+        <div class="hotels-form-card reveal reveal-left">
+          <h2 class="hotels-form-title">ค้นหาที่พักและร้านอร่อย</h2>
+
+          <div class="hotels-form-group">
+            <label class="hotels-form-label" for="selectLocation">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              ปลายทาง
+            </label>
+            <div class="hotels-select-wrap">
+              <select id="selectLocation" class="hotels-select">
+                <option value="">เลือกปลายทาง</option>
+                <option value="เชียงใหม่">เชียงใหม่</option>
+                <option value="กระบี่">กระบี่</option>
+                <option value="พระนครศรีอยุธยา">พระนครศรีอยุธยา</option>
+                <option value="แม่ฮ่องสอน">แม่ฮ่องสอน (ปาย)</option>
+                <option value="สุราษฎร์ธานี">สุราษฎร์ธานี (เกาะเต่า)</option>
+                <option value="กรุงเทพมหานคร">กรุงเทพมหานคร</option>
+              </select>
+              <svg class="select-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </div>
+          </div>
+
+          <div class="hotels-form-group">
+            <label class="hotels-form-label" for="selectPeriod">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                <line x1="16" y1="2" x2="16" y2="6" />
+                <line x1="8" y1="2" x2="8" y2="6" />
+                <line x1="3" y1="10" x2="21" y2="10" />
+              </svg>
+              ช่วงเวลา
+            </label>
+            <div class="hotels-select-wrap">
+              <select id="selectPeriod" class="hotels-select">
+                <option value="">เลือกช่วงเวลา</option>
+                <option value="ไฮซีซั่น">ไฮซีซั่น (พ.ย. - ก.พ.)</option>
+                <option value="ฤดูร้อน">ฤดูร้อน (มี.ค. - พ.ค.)</option>
+                <option value="ฤดูฝน">ฤดูฝน (มิ.ย. - ต.ค.)</option>
+                <option value="สุดสัปดาห์">สุดสัปดาห์ (เสาร์-อาทิตย์)</option>
+              </select>
+              <svg class="select-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </div>
+          </div>
+
+          <div class="hotels-form-group">
+            <label class="hotels-form-label" for="selectHotelType">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 21h18M3 7v14M21 7v14M6 21V11m4 10V11m4 10V11m4 10V11M9 3h6v4H9z" />
+              </svg>
+              ประเภทที่พัก
+            </label>
+            <div class="hotels-select-wrap">
+              <select id="selectHotelType" class="hotels-select">
+                <option value="">เลือกประเภทที่พัก</option>
+                <option value="รีสอร์ทหรู">รีสอร์ทหรู (Luxury Resort)</option>
+                <option value="พูลวิลล่า">พูลวิลล่าติดทะเล (Pool Villa)</option>
+                <option value="โฮมสเตย์">โฮมสเตย์ธรรมชาติ (Homestay)</option>
+                <option value="โรงแรม">โรงแรมใจกลางเมือง (Hotel)</option>
+              </select>
+              <svg class="select-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </div>
+          </div>
+
+          <div class="hotels-form-group">
+            <label class="hotels-form-label" for="selectRestType">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8zM6 1v3M10 1v3M14 1v3" />
+              </svg>
+              ร้านอาหาร
+            </label>
+            <div class="hotels-select-wrap">
+              <select id="selectRestType" class="hotels-select">
+                <option value="">เลือกร้านอาหาร</option>
+                <option value="อาหารไทยโบราณ">อาหารไทยโบราณ / ริมน้ำ</option>
+                <option value="ซีฟู้ดสด">อาหารทะเลสด / ซีฟู้ด</option>
+                <option value="คาเฟ่">คาเฟ่ & เบเกอรี่</option>
+                <option value="Street Food">สตรีทฟู้ดระดับมิชลิน</option>
+              </select>
+              <svg class="select-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </div>
+          </div>
+
+          <button class="hotels-submit-btn" id="hotelsFormSubmit">ค้นหา</button>
+        </div>
+
+        <!-- Right Column: Interactive Map Preview -->
+        <div class="hotels-map-card reveal reveal-right">
+          <div class="hotels-map-container" id="mapContainer">
+            <!-- Stylized Thailand Map Graphic SVG -->
+            <svg class="thailand-map-svg" viewBox="0 0 600 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path class="map-land"
+                d="M 280 80 Q 320 60 360 90 T 380 150 Q 420 180 400 240 T 360 300 Q 330 330 310 380 T 290 450 Q 280 500 250 560 T 220 620 Q 200 660 180 630 T 190 560 Q 210 500 240 430 T 260 340 Q 250 280 230 220 T 220 140 Z"
+                fill="#DDD4C4" stroke="#C5B9A5" stroke-width="2" />
+              <path class="map-sea-lines" d="M 50 100 Q 150 120 200 80" stroke="#C5B9A5" stroke-width="1"
+                stroke-dasharray="4 4" />
+              <path class="map-sea-lines" d="M 400 500 Q 480 540 550 520" stroke="#C5B9A5" stroke-width="1"
+                stroke-dasharray="4 4" />
+            </svg>
+
+            <!-- Interactive Map Pins -->
+            <div class="map-pin pin-chiangmai" data-loc="เชียงใหม่" style="top: 22%; left: 38%;">
+              <div class="pin-pulse"></div>
+              <div class="pin-icon">📍</div>
+              <div class="pin-tooltip">เชียงใหม่ (14 ที่พัก/ร้าน)</div>
+            </div>
+
+            <div class="map-pin pin-ayutthaya" data-loc="พระนครศรีอยุธยา" style="top: 42%; left: 47%;">
+              <div class="pin-pulse"></div>
+              <div class="pin-icon">📍</div>
+              <div class="pin-tooltip">อยุธยา (8 ที่พัก/ร้าน)</div>
+            </div>
+
+            <div class="map-pin pin-bangkok" data-loc="กรุงเทพมหานคร" style="top: 50%; left: 45%;">
+              <div class="pin-pulse"></div>
+              <div class="pin-icon">📍</div>
+              <div class="pin-tooltip">กรุงเทพฯ (22 ที่พัก/ร้าน)</div>
+            </div>
+
+            <div class="map-pin pin-krabi" data-loc="กระบี่" style="top: 75%; left: 32%;">
+              <div class="pin-pulse"></div>
+              <div class="pin-icon">📍</div>
+              <div class="pin-tooltip">กระบี่ (11 ที่พัก/ร้าน)</div>
+            </div>
+
+            <div class="map-pin pin-surat" data-loc="สุราษฎร์ธานี" style="top: 68%; left: 40%;">
+              <div class="pin-pulse"></div>
+              <div class="pin-icon">📍</div>
+              <div class="pin-tooltip">เกาะเต่า/สุราษฎร์ (9 ที่พัก/ร้าน)</div>
+            </div>
+
+            <!-- Floating Filter Widget Overlay (Figma style) -->
+            <div class="map-filter-widget">
+              <div class="widget-title">ตัวกรองเพิ่มเติม</div>
+              <label class="widget-check-item">
+                <input type="checkbox" id="checkFilterAll" checked>
+                <span class="custom-radio"></span>
+                <span>ตัวกรองเพิ่มเติม</span>
+              </label>
+              <label class="widget-check-item">
+                <input type="checkbox" id="checkHotel">
+                <span class="custom-radio"></span>
+                <span>ประเภทที่พัก</span>
+              </label>
+              <label class="widget-check-item">
+                <input type="checkbox" id="checkPrice">
+                <span class="custom-radio"></span>
+                <span>ช่วงราคา</span>
+              </label>
+              <label class="widget-check-item">
+                <input type="checkbox" id="checkRest">
+                <span class="custom-radio"></span>
+                <span>ร้านอาหาร</span>
+              </label>
+              <label class="widget-check-item">
+                <input type="checkbox" id="checkFacility">
+                <span class="custom-radio"></span>
+                <span>สิ่งอำนวยความสะดวก</span>
+              </label>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       RESULTS SECTION (List / Grid View)
+       ========================================================================= -->
+  <section class="hotels-results-section">
+    <div class="container">
+
+      <!-- Results Header with View Toggle -->
+      <div class="hotels-results-header reveal reveal-up">
+        <div class="hotels-results-title-group">
+          <div class="hotels-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="4" y1="21" x2="4" y2="14" />
+              <line x1="4" y1="10" x2="4" y2="3" />
+              <line x1="12" y1="21" x2="12" y2="12" />
+              <line x1="12" y1="8" x2="12" y2="3" />
+              <line x1="20" y1="21" x2="20" y2="16" />
+              <line x1="20" y1="12" x2="20" y2="3" />
+              <line x1="1" y1="14" x2="7" y2="14" />
+              <line x1="9" y1="8" x2="15" y2="8" />
+              <line x1="17" y1="16" x2="23" y2="16" />
+            </svg>
+          </div>
+          <h2 class="hotels-results-heading">ผลลัพธ์ <span>(List View)</span></h2>
+        </div>
+
+        <div class="hotels-view-toggle">
+          <button class="hotels-toggle-btn active" id="btnGridView" aria-label="แบบการ์ด">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="7" height="7" rx="1" />
+              <rect x="14" y="3" width="7" height="7" rx="1" />
+              <rect x="14" y="14" width="7" height="7" rx="1" />
+              <rect x="3" y="14" width="7" height="7" rx="1" />
+            </svg>
+            <span>แบบการ์ด</span>
+          </button>
+          <button class="hotels-toggle-btn" id="btnListView" aria-label="แบบรายการ">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="8" y1="6" x2="21" y2="6" />
+              <line x1="8" y1="12" x2="21" y2="12" />
+              <line x1="8" y1="18" x2="21" y2="18" />
+              <line x1="3" y1="6" x2="3.01" y2="6" />
+              <line x1="3" y1="12" x2="3.01" y2="12" />
+              <line x1="3" y1="18" x2="3.01" y2="18" />
+            </svg>
+            <span>แบบรายการ</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Hotel / Restaurant Cards Grid (3 Columns) -->
+      <div class="hotels-cards-grid" id="hotelsGrid">
+
+        <!-- Card 1: Chiang Mai Luxury Resort -->
+        <article class="hotel-card" data-location="เชียงใหม่" data-type="รีสอร์ทหรู" data-name="วัดพระธาตุดอยสุเทพ รีสอร์ทเชียงใหม่">
+          <div class="hotel-card-img">
+            <img src="assets/images/luxury_resort_chiangmai.jpg" alt="รีสอร์ทเชียงใหม่" loading="lazy">
+            <div class="hotel-badge">รีสอร์ทหรู</div>
+            <button class="hotel-fav-btn" aria-label="บันทึก">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+          <div class="hotel-card-body">
+            <h3 class="hotel-card-title">วัดพระธาตุดอยสุเทพ — เชียงใหม่</h3>
+            <div class="hotel-card-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              เชียงใหม่
+            </div>
+            <p class="hotel-card-desc">วัดศักดิ์สิทธิ์คู่เมืองเชียงใหม่ ตั้งอยู่บนดอยสุเทพ โดดเด่นด้วยพระธาตุสุวรรณเจดีย์และวิวเมืองมุมสูง</p>
+            <div class="hotel-card-stats">
+              <span class="stat-rating">★ 4.8</span>
+              <span class="stat-tag">วัฒนธรรม</span>
+              <span class="stat-count">🔖 1.2K</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2: Krabi Beach Villa -->
+        <article class="hotel-card" data-location="กระบี่" data-type="พูลวิลล่า" data-name="เกาะพีพี พูลวิลล่ากระบี่">
+          <div class="hotel-card-img">
+            <img src="assets/images/sea_villa_krabi.jpg" alt="พูลวิลล่ากระบี่" loading="lazy">
+            <div class="hotel-badge">พูลวิลล่า</div>
+            <button class="hotel-fav-btn" aria-label="บันทึก">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+          <div class="hotel-card-body">
+            <h3 class="hotel-card-title">เกาะพีพี — กระบี่</h3>
+            <div class="hotel-card-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              กระบี่
+            </div>
+            <p class="hotel-card-desc">เที่ยวทะเลสวย น้ำใส ดำน้ำ ดูปะการัง แหล่งใกล้ชิดธรรมชาติริมอ่าวอันดามัน</p>
+            <div class="hotel-card-stats">
+              <span class="stat-rating">★ 4.7</span>
+              <span class="stat-tag">ทะเล</span>
+              <span class="stat-count">🔖 2.3K</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3: Ayutthaya Riverside Restaurant -->
+        <article class="hotel-card" data-location="พระนครศรีอยุธยา" data-type="อาหารไทยโบราณ" data-name="อุทยานประวัติศาสตร์อยุธยา ร้านอาหารริมน้ำ">
+          <div class="hotel-card-img">
+            <img src="assets/images/riverside_restaurant_ayutthaya.jpg" alt="ร้านอาหารอยุธยา" loading="lazy">
+            <div class="hotel-badge">ร้านอาหารริมน้ำ</div>
+            <button class="hotel-fav-btn" aria-label="บันทึก">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+          <div class="hotel-card-body">
+            <h3 class="hotel-card-title">อุทยานประวัติศาสตร์อยุธยา</h3>
+            <div class="hotel-card-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              พระนครศรีอยุธยา
+            </div>
+            <p class="hotel-card-desc">แหล่งมรดกโลก เต็มไปด้วยโบราณสถานและวัดเก่า สะท้อนความรุ่งเรืองในอดีต พร้อมร้านกุ้งเผาอร่อย</p>
+            <div class="hotel-card-stats">
+              <span class="stat-rating">★ 4.6</span>
+              <span class="stat-tag">วัฒนธรรม</span>
+              <span class="stat-count">🔖 980</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 4: Pai Mountain Homestay -->
+        <article class="hotel-card" data-location="แม่ฮ่องสอน" data-type="โฮมสเตย์" data-name="ปาย โฮมสเตย์แม่ฮ่องสอน">
+          <div class="hotel-card-img">
+            <img src="assets/images/pai_trip.jpg" alt="ปายโฮมสเตย์" loading="lazy">
+            <div class="hotel-badge">โฮมสเตย์</div>
+            <button class="hotel-fav-btn" aria-label="บันทึก">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+          <div class="hotel-card-body">
+            <h3 class="hotel-card-title">ปาย — แม่ฮ่องสอน</h3>
+            <div class="hotel-card-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              แม่ฮ่องสอน
+            </div>
+            <p class="hotel-card-desc">เมืองเล็กบรรยากาศสงบ รายล้อมด้วยภูเขาและหมอก เหมาะกับการพักผ่อนแบบสโลว์ไลฟ์</p>
+            <div class="hotel-card-stats">
+              <span class="stat-rating">★ 4.7</span>
+              <span class="stat-tag">ธรรมชาติ</span>
+              <span class="stat-count">🔖 1.5K</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 5: Koh Tao Diving Resort -->
+        <article class="hotel-card" data-location="สุราษฎร์ธานี" data-type="รีสอร์ทหรู" data-name="เกาะเต่า รีสอร์ทดำน้ำ">
+          <div class="hotel-card-img">
+            <img src="assets/images/koh_tao_trip.jpg" alt="เกาะเต่ารีสอร์ท" loading="lazy">
+            <div class="hotel-badge">รีสอร์ทดำน้ำ</div>
+            <button class="hotel-fav-btn" aria-label="บันทึก">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+          <div class="hotel-card-body">
+            <h3 class="hotel-card-title">เกาะเต่า — สุราษฎร์ธานี</h3>
+            <div class="hotel-card-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              สุราษฎร์ธานี
+            </div>
+            <p class="hotel-card-desc">แหล่งดำน้ำชื่อดัง น้ำทะเลใส ปะการังสดสวยงาม เหมาะทั้งมือใหม่และมือโปร</p>
+            <div class="hotel-card-stats">
+              <span class="stat-rating">★ 4.8</span>
+              <span class="stat-tag">ทะเล</span>
+              <span class="stat-count">🔖 2.1K</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 6: Bangkok City Luxury Hotel -->
+        <article class="hotel-card" data-location="กรุงเทพมหานคร" data-type="โรงแรม" data-name="กรุงเทพมหานคร โรงแรมสไตล์ลักชัวรี่">
+          <div class="hotel-card-img">
+            <img src="assets/images/bangkok_trip.jpg" alt="โรงแรมกรุงเทพ" loading="lazy">
+            <div class="hotel-badge">โรงแรมหรู</div>
+            <button class="hotel-fav-btn" aria-label="บันทึก">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+          <div class="hotel-card-body">
+            <h3 class="hotel-card-title">กรุงเทพมหานคร</h3>
+            <div class="hotel-card-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              กรุงเทพมหานคร
+            </div>
+            <p class="hotel-card-desc">เที่ยวครบ กินชิล คาเฟ่ ช้อปปิ้ง และถ่ายรูปสุดชิค ย่านเยาวราชและเจริญกรุง</p>
+            <div class="hotel-card-stats">
+              <span class="stat-rating">★ 4.5</span>
+              <span class="stat-tag">ไลฟ์สไตล์</span>
+              <span class="stat-count">🔖 3.4K</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       FOOTER (shared)
+       ========================================================================= -->
+  <footer class="site-footer" id="footer">
+    <div class="container">
+      <div class="footer-content-grid">
+        <div class="footer-col-left">
+          <div class="footer-logo-row">
+            <div class="brand-logo-circle"
+              style="width: 32px; height: 32px; border-color: rgba(255, 255, 255, 0.4); background: rgba(255, 255, 255, 0.15); color: #FFFFFF;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" style="width: 18px; height: 18px;">
+                <path d="M3 18l5-7 4 5 3-4 6 6H3z" />
+                <circle cx="8" cy="8" r="2.5" />
+              </svg>
+            </div>
+            <span>เที่ยวเมืองไทย (Travel Thailand)</span>
+          </div>
+          <div class="footer-legal-links">
+            <button class="footer-legal-link">นโยบายความเป็นส่วนตัว (Privacy Policy)</button>
+            | <button class="footer-legal-link">ข้อตกลงการใช้งาน (Terms of Services)</button>
+          </div>
+          <div class="footer-copyright">&copy; 2026 (toeg.com). All rights reserved.</div>
+        </div>
+        <div class="footer-col-center">
+          <a href="index.html" class="footer-quick-link">• หน้าแรก</a>
+          <a href="destinations.html" class="footer-quick-link">• สถานที่ท่องเที่ยว</a>
+          <a href="trips.html" class="footer-quick-link">• ทริปแนะนำ</a>
+          <a href="hotels.html" class="footer-quick-link">• ที่พักและร้านอาหาร</a>
+          <a href="travel-info.html" class="footer-quick-link">• ข้อมูลการเดินทาง</a>
+        </div>
+        <div class="footer-col-right">
+          <div class="footer-contact-title">ติดต่อเรา (Contact Us)</div>
+          <div class="footer-social-icons">
+            <button class="social-icon-btn" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>
+            </button>
+            <button class="social-icon-btn" aria-label="LINE">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" /></svg>
+            </button>
+            <button class="social-icon-btn" aria-label="TikTok">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5v3a8 8 0 0 1-5-1.7V16a7 7 0 1 1-7-7c.7 0 1.4.1 2 .3V9z" /></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/hotels.js"></script>
+
+</body>
+</html>

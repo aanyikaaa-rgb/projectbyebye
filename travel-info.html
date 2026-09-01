@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="ข้อมูลการเดินทาง (Travel Guide) - คู่มือวางแผนการเดินทาง ค้นหาเส้นทาง ค้นหาวิธีการเดินทางทั่วประเทศไทย">
+  <meta name="keywords"
+    content="ข้อมูลการเดินทาง, Travel Guide, แพลนเนอร์ทัวร์, วิธีการเดินทาง, ค้นหาเส้นทาง, เที่ยวไทย">
+  <title>ข้อมูลการเดินทาง - เที่ยวเมืองไทย</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/travel-info.css">
+</head>
+
+<body>
+
+  <!-- =========================================================================
+       HEADER (shared)
+       ========================================================================= -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-container">
+      <a href="index.html" class="header-brand" aria-label="เที่ยวเมืองไทย หน้าแรก">
+        <div class="brand-logo-circle">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M3 18l5-7 4 5 3-4 6 6H3z" />
+            <circle cx="8" cy="8" r="2.5" />
+          </svg>
+        </div>
+        <span class="brand-text">เที่ยวเมืองไทย</span>
+      </a>
+
+      <nav class="header-nav" aria-label="Main Navigation">
+        <a href="index.html" class="header-nav-link">หน้าแรก</a>
+        <a href="destinations.html" class="header-nav-link">สถานที่ท่องเที่ยว</a>
+        <a href="trips.html" class="header-nav-link">ทริปแนะนำ</a>
+        <a href="hotels.html" class="header-nav-link">ที่พักและร้านอาหาร</a>
+        <a href="travel-info.html" class="header-nav-link active">ข้อมูลการเดินทาง</a>
+      </nav>
+
+      <button class="header-contact-btn" id="headerContactBtn" aria-label="ติดต่อเรา" onclick="window.location='contact.html'">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round">
+          <path
+            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+          </path>
+        </svg>
+        <span>ติดต่อ</span>
+      </button>
+
+      <!-- Mobile Top Bar -->
+      <div class="mobile-top-bar">
+        <a href="index.html" class="header-brand" aria-label="เที่ยวเมืองไทย" style="display: flex;">
+          <div class="brand-logo-circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M3 18l5-7 4 5 3-4 6 6H3z" />
+              <circle cx="8" cy="8" r="2.5" />
+            </svg>
+          </div>
+          <span
+            style="font-family: var(--font-heading); font-weight: 700; font-size: 1.15rem; color: var(--text-primary);">เที่ยวเมืองไทย</span>
+        </a>
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="เปิดเมนู" aria-expanded="false">
+          <div class="hamburger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer-overlay" id="drawerOverlay"></div>
+  <aside class="mobile-drawer" id="mobileDrawer" aria-label="Mobile Navigation Drawer">
+    <div>
+      <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 28px;">
+        <div class="brand-logo-circle" style="width: 40px; height: 40px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" style="width: 22px; height: 22px;">
+            <path d="M3 18l5-7 4 5 3-4 6 6H3z" />
+            <circle cx="8" cy="8" r="2.5" />
+          </svg>
+        </div>
+        <span
+          style="font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: var(--text-primary);">เที่ยวเมืองไทย</span>
+      </div>
+      <ul class="drawer-nav-list">
+        <li><a href="index.html" class="drawer-nav-link">หน้าแรก</a></li>
+        <li><a href="destinations.html" class="drawer-nav-link">สถานที่ท่องเที่ยว</a></li>
+        <li><a href="trips.html" class="drawer-nav-link">ทริปแนะนำ</a></li>
+        <li><a href="hotels.html" class="drawer-nav-link">ที่พักและร้านอาหาร</a></li>
+        <li><a href="travel-info.html" class="drawer-nav-link active">ข้อมูลการเดินทาง</a></li>
+        <li><a href="#" class="drawer-nav-link">ติดต่อเรา</a></li>
+      </ul>
+    </div>
+    <div class="drawer-footer">
+      <p style="font-size: 0.85rem; color: var(--text-secondary);">สัมผัสเสน่ห์ท่องเที่ยวทั่วไทย</p>
+    </div>
+  </aside>
+
+  <!-- =========================================================================
+       HERO BANNER
+       ========================================================================= -->
+  <section class="guide-hero">
+    <div class="guide-hero-bg">
+      <img src="assets/images/travel_guide_hero.jpg" alt="วิวป่าเขาทะเลหมอกธรรมชาติ" loading="eager">
+      <div class="guide-hero-overlay"></div>
+    </div>
+
+    <div class="container guide-hero-content">
+      <div class="guide-hero-center reveal reveal-up">
+        <h1 class="guide-hero-title">
+          ข้อมูลการเดินทาง<br>
+          <span class="guide-hero-sub-title">(Travel Guide)</span>
+        </h1>
+        <p class="guide-hero-desc">คู่มือวางแผนการเดินทางและค้นหาสถานที่ท่องเที่ยว</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       MAIN CONTENT CONTAINER
+       ========================================================================= -->
+  <main class="guide-main-section">
+    <div class="container">
+
+      <!-- SECTION 1: ส่วนหัวและเมนูหลัก (3 Cards Grid) -->
+      <section class="guide-menu-section">
+        <div class="guide-section-header reveal reveal-up">
+          <div class="guide-header-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+            </svg>
+          </div>
+          <h2 class="guide-section-title">ส่วนหัวและเมนูหลัก</h2>
+        </div>
+
+        <div class="guide-cards-grid">
+
+          <!-- Card 1: แพลนเนอร์ทัวร์ -->
+          <article class="guide-card reveal reveal-up delay-1" id="cardPlanner" onclick="openGuideMenuModal('cardPlanner')">
+            <div class="guide-card-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+              </svg>
+            </div>
+            <div class="guide-card-content">
+              <h3 class="guide-card-title">แพลนเนอร์ทัวร์</h3>
+              <p class="guide-card-text">วางแผนการเดินทางในแบบของคุณ</p>
+            </div>
+            <div class="guide-card-chevron">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
+            </div>
+          </article>
+
+          <!-- Card 2: วิธีการเดินทาง -->
+          <article class="guide-card reveal reveal-up delay-2" id="cardTransport" onclick="openGuideMenuModal('cardTransport')">
+            <div class="guide-card-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+              </svg>
+            </div>
+            <div class="guide-card-content">
+              <h3 class="guide-card-title">วิธีการเดินทาง</h3>
+              <p class="guide-card-text">ค้นหาวิธีการเดินทางและความช่วยเหลือ</p>
+            </div>
+            <div class="guide-card-chevron">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
+            </div>
+          </article>
+
+          <!-- Card 3: ข้อมูลการเดินทาง -->
+          <article class="guide-card reveal reveal-up delay-3" id="cardInfo" onclick="openGuideMenuModal('cardInfo')">
+            <div class="guide-card-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                <line x1="12" y1="17" x2="12.01" y2="17" />
+              </svg>
+            </div>
+            <div class="guide-card-content">
+              <h3 class="guide-card-title">ข้อมูลการเดินทาง</h3>
+              <p class="guide-card-text">ข้อมูลรายละเอียดการเดินทางแบบครบถ้วน</p>
+            </div>
+            <div class="guide-card-chevron">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- SECTION 2: แผนที่และค้นหาเส้นทาง (Route Search & Interactive Map Planner) -->
+      <section class="guide-route-section">
+        <div class="guide-section-header reveal reveal-up">
+          <div class="guide-header-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="4" y1="21" x2="4" y2="14" />
+              <line x1="4" y1="10" x2="4" y2="3" />
+              <line x1="12" y1="21" x2="12" y2="12" />
+              <line x1="12" y1="8" x2="12" y2="3" />
+              <line x1="20" y1="21" x2="20" y2="16" />
+              <line x1="20" y1="12" x2="20" y2="3" />
+              <line x1="1" y1="14" x2="7" y2="14" />
+              <line x1="9" y1="8" x2="15" y2="8" />
+              <line x1="17" y1="16" x2="23" y2="16" />
+            </svg>
+          </div>
+          <h2 class="guide-section-title">แผนที่และค้นหาเส้นทาง</h2>
+        </div>
+
+        <div class="guide-route-card reveal reveal-up">
+          <div class="guide-route-grid">
+
+            <!-- Left Column: Map Graphic / Route Preview -->
+            <div class="route-map-visual">
+              <img src="assets/images/route_map_preview.jpg" alt="แผนที่เส้นทางท่องเที่ยว" loading="lazy">
+
+              <!-- Map Overlay Pins -->
+              <div class="route-pin rpin-start" style="top: 35%; left: 25%;">
+                <div class="rpin-pulse"></div>
+                <div class="rpin-badge">A. จุดเริ่มต้น</div>
+              </div>
+              <div class="route-pin rpin-mid" style="top: 55%; left: 52%;">
+                <div class="rpin-pulse"></div>
+                <div class="rpin-badge">B. จุดแวะพัก</div>
+              </div>
+              <div class="route-pin rpin-end" style="top: 30%; left: 78%;">
+                <div class="rpin-pulse"></div>
+                <div class="rpin-badge">C. จุดหมายปลายทาง</div>
+              </div>
+            </div>
+
+            <!-- Right Column: Route Search Form -->
+            <div class="route-form-panel">
+              <div class="route-field-group">
+                <label class="route-label" for="routeOrigin">จุดเริ่มต้น</label>
+                <input type="text" id="routeOrigin" class="route-input" placeholder="ระบุจุดเริ่มต้น" aria-label="จุดเริ่มต้น">
+              </div>
+
+              <div class="route-field-group">
+                <label class="route-label" for="routeDestination">จุดหมายปลายทาง</label>
+                <input type="text" id="routeDestination" class="route-input" placeholder="ระบุจุดหมายปลายทาง" aria-label="จุดหมายปลายทาง">
+              </div>
+
+              
+              <!-- Quick Preset Route Chips -->
+              <div class="route-presets" style="margin-bottom: 16px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center;">
+                <span style="font-size: 0.8rem; color: var(--text-secondary); font-weight: 600;">เส้นทางยอดนิยม:</span>
+                <button type="button" class="planner-chip" style="font-size: 0.78rem; padding: 4px 10px;" onclick="setRoutePreset('กรุงเทพฯ', 'เชียงใหม่')">กรุงเทพฯ ➔ เชียงใหม่</button>
+                <button type="button" class="planner-chip" style="font-size: 0.78rem; padding: 4px 10px;" onclick="setRoutePreset('กรุงเทพฯ', 'กระบี่')">กรุงเทพฯ ➔ กระบี่</button>
+                <button type="button" class="planner-chip" style="font-size: 0.78rem; padding: 4px 10px;" onclick="setRoutePreset('เชียงใหม่', 'ภูเก็ต')">เชียงใหม่ ➔ ภูเก็ต</button>
+              </div>
+
+              <button class="route-search-btn" id="btnSearchRoute" onclick="calculateRoute()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <circle cx="11" cy="11" r="8" />
+                  <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                </svg>
+                <span>ค้นหาเส้นทาง</span>
+              </button>
+
+              <!-- Route Result Info (hidden initially) -->
+              <div class="route-result-box" id="routeResultBox" style="display: none;">
+                <div class="route-result-header">
+                  <span class="route-dist">🚗 ระยะทาง: <strong id="resDistance">680 กม.</strong></span>
+                  <span class="route-time">⏱️ เวลา: <strong id="resTime">9 ชม. 15 นาที</strong></span>
+                </div>
+                <p class="route-result-desc" id="resDesc">เส้นทางแนะนำ: ทางหลวงหมายเลข 1 (พหลโยธิน) มุ่งหน้าสู่ภาคเหนือ</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      
+
+    </div>
+  </main>
+
+  <!-- =========================================================================
+       FOOTER (shared)
+       ========================================================================= -->
+  <footer class="site-footer" id="footer">
+    <div class="container">
+      <div class="footer-content-grid">
+        <div class="footer-col-left">
+          <div class="footer-logo-row">
+            <div class="brand-logo-circle"
+              style="width: 32px; height: 32px; border-color: rgba(255, 255, 255, 0.4); background: rgba(255, 255, 255, 0.15); color: #FFFFFF;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" style="width: 18px; height: 18px;">
+                <path d="M3 18l5-7 4 5 3-4 6 6H3z" />
+                <circle cx="8" cy="8" r="2.5" />
+              </svg>
+            </div>
+            <span>เที่ยวเมืองไทย (Travel Thailand)</span>
+          </div>
+          <div class="footer-legal-links">
+            <button class="footer-legal-link">นโยบายความเป็นส่วนตัว (Privacy Policy)</button>
+            | <button class="footer-legal-link">ข้อตกลงการใช้งาน (Terms of Services)</button>
+          </div>
+          <div class="footer-copyright">&copy; 2026 (toeg.com). All rights reserved.</div>
+        </div>
+        <div class="footer-col-center">
+          <a href="index.html" class="footer-quick-link">• หน้าแรก</a>
+          <a href="destinations.html" class="footer-quick-link">• สถานที่ท่องเที่ยว</a>
+          <a href="trips.html" class="footer-quick-link">• ทริปแนะนำ</a>
+          <a href="hotels.html" class="footer-quick-link">• ที่พักและร้านอาหาร</a>
+          <a href="travel-info.html" class="footer-quick-link">• ข้อมูลการเดินทาง</a>
+        </div>
+        <div class="footer-col-right">
+          <div class="footer-contact-title">ติดต่อเรา (Contact Us)</div>
+          <div class="footer-social-icons">
+            <button class="social-icon-btn" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>
+            </button>
+            <button class="social-icon-btn" aria-label="LINE">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" /></svg>
+            </button>
+            <button class="social-icon-btn" aria-label="TikTok">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5v3a8 8 0 0 1-5-1.7V16a7 7 0 1 1-7-7c.7 0 1.4.1 2 .3V9z" /></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  <!-- =========================================================================
+       TRAVEL GUIDE DETAIL MODAL (ส่วนหัวและเมนูหลัก)
+       ========================================================================= -->
+  <div class="modal-overlay" id="guideMenuModal" role="dialog" aria-modal="true" aria-labelledby="guideModalTitle">
+    <div class="modal-card" style="max-width: 720px;">
+      <button class="modal-close-btn" id="guideModalCloseBtn" onclick="closeGuideMenuModal()" aria-label="ปิดหน้าต่าง">&times;</button>
+      <div class="modal-body-content" style="padding: 32px 28px;">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+          <span class="modal-badge" id="guideModalBadge">ข้อมูลแนะนำ</span>
+        </div>
+        <h3 class="modal-title" id="guideModalTitle" style="font-size: 1.5rem; margin-bottom: 16px;">ชื่อข้อมูลการเดินทาง</h3>
+        <div id="guideModalContent"></div>
+        <div style="text-align: right; margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--border-light);">
+          <button class="dest-read-btn" id="guideModalInnerClose" onclick="closeGuideMenuModal()">ปิดหน้าต่าง</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/travel-info.js"></script>
+
+</body>
+</html>

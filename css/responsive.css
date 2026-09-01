@@ -1,0 +1,451 @@
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKPOINTS - เที่ยวเมืองไทย (Travel Thailand)
+   Zero Overlap & Rock-Solid Mobile Layout
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Large Tablets & Small Laptops (Max 1100px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1100px) {
+  .header-nav {
+    gap: 12px;
+  }
+
+  .header-nav-link {
+    font-size: 0.9rem;
+    padding: 5px 8px;
+  }
+
+  .hero-main-title {
+    font-size: 3.2rem;
+  }
+
+  .hero-main-subtitle {
+    font-size: 1.5rem;
+  }
+
+  .hero-features-floating-card {
+    max-width: 600px;
+    padding: 12px 20px;
+    bottom: 44px;
+  }
+
+  .feature-bar-icon-circle {
+    width: 42px;
+    height: 42px;
+  }
+
+  .destinations-grid {
+    gap: 20px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. Tablets (< 992px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 991px) {
+
+  /* Complete Header collapse into Mobile Bar */
+  .header-container>.header-brand,
+  .header-container>.header-nav,
+  .header-container>.header-contact-btn {
+    display: none !important;
+  }
+
+  .mobile-top-bar {
+    display: flex !important;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .hamburger-btn {
+    display: flex !important;
+  }
+
+  /* Full-Width Banner Tablet */
+  .hero-fullwidth-section {
+    min-height: 580px;
+  }
+
+  .hero-center-content {
+    margin: 20px auto 0;
+  }
+
+  .hero-main-title {
+    font-size: 2.6rem;
+  }
+
+  .hero-main-subtitle {
+    font-size: 1.3rem;
+  }
+
+  .hero-tagline-badge {
+    font-size: 0.86rem;
+    padding: 6px 18px;
+    max-width: 90%;
+    line-height: 1.4;
+  }
+
+  .hero-features-floating-card {
+    max-width: 560px;
+    padding: 12px 16px;
+    border-radius: 20px;
+    bottom: 42px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .feature-bar-icon-circle {
+    width: 40px;
+    height: 40px;
+  }
+
+  .feature-bar-icon-circle svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .feature-bar-label {
+    font-size: 0.7rem;
+  }
+
+  .hero-arrow-btn {
+    width: 42px;
+    height: 42px;
+    font-size: 1.1rem;
+  }
+
+  .hero-arrow-prev {
+    left: 12px;
+  }
+
+  .hero-arrow-next {
+    right: 12px;
+  }
+
+  /* Destinations Grid */
+  .destinations-section {
+    padding: 45px 0 55px;
+  }
+
+  .destinations-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  /* Articles */
+  .articles-section {
+    padding: 10px 0 60px;
+  }
+
+  .article-row-card {
+    grid-template-columns: 240px 1fr;
+    gap: 20px;
+    padding: 14px;
+  }
+
+  .article-thumb-wrap {
+    height: 170px;
+  }
+
+  /* Footer */
+  .footer-content-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+
+  .footer-col-right {
+    grid-column: span 2;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    padding-top: 20px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. Mobile Phones (Max 767px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 767px) {
+  :root {
+    --header-height: 65px;
+  }
+
+  .site-header {
+    padding: 10px 0;
+  }
+
+  .header-container {
+    padding: 0 16px;
+  }
+
+  .container {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  /* Full-Width Banner on Mobile */
+  .hero-fullwidth-section {
+    min-height: 560px;
+    position: relative;
+  }
+
+  .hero-center-content {
+    margin: 14px auto 0;
+    padding: 0 12px;
+  }
+
+  .hero-diamond-icon {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 4px;
+  }
+
+  .hero-main-title {
+    font-size: 2.05rem;
+    line-height: 1.18;
+    margin-bottom: 4px;
+  }
+
+  .hero-main-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+
+  .hero-tagline-badge {
+    font-size: 0.76rem;
+    padding: 5px 14px;
+    line-height: 1.35;
+    max-width: 95%;
+  }
+
+  /* Floating 5-Feature Card: ANCHORED AT BOTTOM & PERFECTLY CENTERED */
+  .hero-features-floating-card {
+    position: absolute;
+    bottom: 36px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 94%;
+    max-width: 100%;
+    padding: 10px 6px 12px;
+    border-radius: 18px;
+    z-index: 10;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  }
+
+  .hero-features-bar-grid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2px;
+  }
+
+  .feature-bar-item {
+    max-width: 62px;
+  }
+
+  .feature-bar-icon-circle {
+    width: 38px;
+    height: 38px;
+    margin-bottom: 4px;
+  }
+
+  .feature-bar-icon-circle svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .feature-bar-label {
+    font-size: 0.62rem;
+    line-height: 1.2;
+  }
+
+  .hero-arrow-btn {
+    display: none !important;
+    /* Hide arrows on touch screens */
+  }
+
+  /* Dots Indicator: ANCHORED AT BOTTOM & CENTERED */
+  .hero-banner-dots {
+    position: absolute;
+    bottom: 12px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    z-index: 10;
+  }
+
+  .banner-dot {
+    width: 9px;
+    height: 9px;
+    min-width: 9px;
+    min-height: 9px;
+  }
+
+  /* Destinations Section */
+  .destinations-section {
+    padding: 36px 0 50px;
+  }
+
+  .section-title {
+    font-size: 1.55rem;
+  }
+
+  .destinations-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .destination-card {
+    padding: 14px 14px 22px;
+  }
+
+  .dest-img-wrap {
+    height: 210px;
+    margin-bottom: 14px;
+  }
+
+  .dest-title {
+    font-size: 1.12rem;
+    min-height: auto;
+    margin-bottom: 14px;
+    line-height: 1.35;
+  }
+
+  .dest-btn {
+    padding: 9px 36px;
+    font-size: 0.92rem;
+  }
+
+  /* Articles: Stacked Column layout */
+  .articles-section {
+    padding: 10px 0 50px;
+  }
+
+  .article-row-card {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 14px;
+    background: rgba(228, 218, 203, 0.4);
+    border-radius: var(--radius-md);
+  }
+
+  .article-thumb-wrap {
+    height: 190px;
+    border-radius: var(--radius-sm);
+  }
+
+  .article-heading {
+    font-size: 1.18rem;
+    margin-bottom: 8px;
+  }
+
+  .article-desc {
+    font-size: 0.88rem;
+    line-height: 1.6;
+  }
+
+  /* Footer: Centered stack */
+  .site-footer {
+    padding: 28px 0 20px;
+    margin-top: 24px;
+  }
+
+  .footer-content-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .footer-col-left {
+    align-items: center;
+  }
+
+  .footer-logo-row {
+    justify-content: center;
+  }
+
+  .footer-col-center {
+    align-items: center;
+    gap: 8px;
+  }
+
+  .footer-col-right {
+    grid-column: span 1;
+    align-items: center;
+  }
+
+  .modal-card {
+    max-width: 95vw;
+    border-radius: var(--radius-md);
+  }
+
+  .modal-image-wrap {
+    height: 200px;
+  }
+
+  .modal-body-content {
+    padding: 18px 16px 24px;
+  }
+
+  .modal-title {
+    font-size: 1.3rem;
+  }
+
+  .modal-text {
+    font-size: 0.88rem;
+    line-height: 1.6;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   4. Small Mobile Phones (Max 380px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 380px) {
+  .hero-fullwidth-section {
+    min-height: 540px;
+  }
+
+  .hero-main-title {
+    font-size: 1.8rem;
+  }
+
+  .hero-main-subtitle {
+    font-size: 1.02rem;
+  }
+
+  .hero-tagline-badge {
+    font-size: 0.7rem;
+    padding: 4px 10px;
+  }
+
+  .hero-features-floating-card {
+    bottom: 32px;
+  }
+
+  .hero-banner-dots {
+    bottom: 10px;
+  }
+
+  .feature-bar-item {
+    max-width: 54px;
+  }
+
+  .feature-bar-icon-circle {
+    width: 34px;
+    height: 34px;
+  }
+
+  .feature-bar-icon-circle svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .feature-bar-label {
+    font-size: 0.56rem;
+  }
+}

@@ -1,0 +1,161 @@
+/* ==========================================================================
+   GLOBAL DESIGN TOKENS & RESET - เที่ยวเมืองไทย (Travel Thailand)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Prompt:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Sarabun:wght@300;400;500;600&display=swap');
+
+:root {
+  /* Color Palette - Warm Thai Earth Tones */
+  --bg-main: #F5EFE6;
+  --bg-secondary: #EBE2D4;
+  --bg-card: #E4DACB;
+  --bg-card-hover: #DFD4C3;
+  --bg-pill: #D8CEBD;
+  --bg-pill-active: #9FA175;
+  --bg-pill-hover: #CCC1AF;
+  --bg-badge: #A4A67E;
+  --bg-footer: #8E8878;
+  --bg-footer-dark: #6C6658;
+  
+  /* Text Colors */
+  --text-primary: #3E352B;
+  --text-secondary: #655B4F;
+  --text-muted: #867C6F;
+  --text-light: #FBF8F3;
+  --text-white: #FFFFFF;
+  --text-badge: #F4EFE6;
+  --text-accent: #8E6D38;
+
+  /* Accent & Highlights */
+  --accent-gold: #C5A059;
+  --accent-gold-light: #E7CF9C;
+  --accent-olive: #929567;
+  --accent-olive-dark: #74774B;
+  --accent-tan: #C9BAA5;
+  --accent-bronze: #885B35;
+  
+  /* Borders & Shadows */
+  --border-light: rgba(142, 136, 120, 0.2);
+  --border-card: rgba(110, 95, 78, 0.15);
+  --shadow-sm: 0 2px 8px rgba(62, 53, 43, 0.06);
+  --shadow-md: 0 8px 24px rgba(62, 53, 43, 0.09);
+  --shadow-lg: 0 16px 36px rgba(62, 53, 43, 0.12);
+  --shadow-floating: 0 12px 28px rgba(44, 37, 30, 0.15);
+  
+  /* Typography */
+  --font-heading: 'Bai Jamjuree', 'Prompt', sans-serif;
+  --font-body: 'Prompt', 'Sarabun', sans-serif;
+  --font-thai-script: 'Bai Jamjuree', cursive;
+  
+  /* Spacing */
+  --container-max: 1240px;
+  --header-height: 80px;
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-pill: 9999px;
+  
+  /* Transitions */
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Base Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(201, 186, 165, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(164, 166, 126, 0.12) 0%, transparent 40%);
+}
+
+body.drawer-open {
+  overflow: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* Layout Container */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* Section Title Pattern */
+.section-header {
+  text-align: center;
+  margin-bottom: 36px;
+  position: relative;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 2.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+  display: inline-block;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 3px;
+  background: var(--accent-gold);
+  margin: 10px auto 0;
+  border-radius: var(--radius-pill);
+}
+
+/* Utility Classes */
+.text-center { text-align: center; }
+.flex-center { display: flex; align-items: center; justify-content: center; }
+.hidden { display: none !important; }

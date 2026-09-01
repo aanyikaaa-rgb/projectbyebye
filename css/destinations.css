@@ -1,0 +1,776 @@
+/* ==========================================================================
+   DESTINATIONS PAGE CSS - หน้าสถานที่ท่องเที่ยว
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. HERO SECTION
+   -------------------------------------------------------------------------- */
+.dest-hero-section {
+  position: relative;
+  padding: 60px 0 50px;
+  background: linear-gradient(135deg, #F5EFE6 0%, #EDE4D4 40%, #F0EBDF 100%);
+  overflow: hidden;
+}
+
+/* Decorative background blobs */
+.dest-hero-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.55;
+}
+
+.dest-hero-blob-1 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(197, 160, 89, 0.3) 0%, transparent 70%);
+  top: -100px;
+  left: -100px;
+}
+
+.dest-hero-blob-2 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(45, 76, 58, 0.18) 0%, transparent 70%);
+  bottom: -80px;
+  right: 100px;
+}
+
+/* Hero 2-column layout */
+.dest-hero-container {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* Left Side */
+.dest-hero-left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.dest-hero-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(45, 76, 58, 0.1);
+  color: #2D4C3A;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  width: fit-content;
+  border: 1px solid rgba(45, 76, 58, 0.2);
+}
+
+.dest-hero-label svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.dest-hero-title {
+  font-family: var(--font-heading);
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.15;
+  margin: 0;
+}
+
+.dest-hero-title-highlight {
+  position: relative;
+  color: #2D4C3A;
+}
+
+.dest-hero-title-highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: rgba(197, 160, 89, 0.5);
+  border-radius: 3px;
+  z-index: -1;
+}
+
+.dest-hero-subtitle {
+  font-family: var(--font-body);
+  font-size: 0.97rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Search Box */
+.dest-search-box {
+  display: flex;
+  align-items: center;
+  background: #FFFFFF;
+  border-radius: 50px;
+  padding: 8px 8px 8px 18px;
+  box-shadow: 0 4px 20px rgba(62, 53, 43, 0.1);
+  border: 1.5px solid rgba(142, 136, 120, 0.2);
+  transition: all 0.25s ease;
+  max-width: 480px;
+}
+
+.dest-search-box:focus-within {
+  border-color: #2D4C3A;
+  box-shadow: 0 4px 24px rgba(45, 76, 58, 0.15);
+}
+
+.dest-search-icon {
+  width: 18px;
+  height: 18px;
+  color: var(--text-secondary);
+  flex-shrink: 0;
+  margin-right: 10px;
+}
+
+.dest-search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  padding: 4px 0;
+}
+
+.dest-search-input::placeholder {
+  color: #ABA49A;
+}
+
+.dest-search-btn {
+  padding: 9px 22px;
+  border-radius: 40px;
+  background: #2D4C3A;
+  color: #FFFFFF;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.22s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.dest-search-btn:hover {
+  background: #1E3D2F;
+  transform: translateY(-1px);
+}
+
+/* Category Filter Pills */
+.dest-category-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.dest-category-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 16px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1.5px solid rgba(142, 136, 120, 0.25);
+  color: var(--text-secondary);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.22s ease;
+  white-space: nowrap;
+}
+
+.dest-category-pill svg {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+}
+
+.dest-category-pill:hover {
+  background: rgba(45, 76, 58, 0.08);
+  border-color: #2D4C3A;
+  color: #2D4C3A;
+  transform: translateY(-2px);
+}
+
+.dest-category-pill.active {
+  background: #2D4C3A;
+  border-color: #2D4C3A;
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(45, 76, 58, 0.3);
+}
+
+.dest-category-pill.active svg {
+  stroke: #FFFFFF;
+}
+
+/* --------------------------------------------------------------------------
+   2. PHOTO COLLAGE (Right Side of Hero)
+   -------------------------------------------------------------------------- */
+.dest-hero-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dest-photo-collage {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 14px;
+  width: 100%;
+  max-width: 540px;
+}
+
+.collage-main {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  aspect-ratio: 3/4;
+  box-shadow: 0 16px 48px rgba(44, 37, 30, 0.22);
+}
+
+.collage-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.collage-main:hover img {
+  transform: scale(1.04);
+}
+
+.collage-badge {
+  position: absolute;
+  bottom: 16px;
+  left: 12px;
+  right: 12px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 14px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.collage-badge-icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+.collage-side {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.collage-side-item {
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(44, 37, 30, 0.15);
+  transition: transform 0.3s ease;
+  flex: 1;
+}
+
+.collage-side-item:hover {
+  transform: scale(1.02);
+}
+
+.collage-side-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.collage-side-top {
+  aspect-ratio: 4/3;
+}
+
+.collage-side-mid {
+  aspect-ratio: 4/3;
+}
+
+.collage-side-bot {
+  aspect-ratio: 4/3;
+}
+
+/* --------------------------------------------------------------------------
+   3. DESTINATIONS GRID SECTION
+   -------------------------------------------------------------------------- */
+.dest-grid-section {
+  padding: 50px 0 80px;
+  background: var(--bg-main);
+}
+
+.dest-grid-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 36px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.dest-grid-title {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.dest-grid-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: var(--accent-gold);
+  border-radius: 2px;
+}
+
+.dest-results-info {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.dest-results-info span {
+  color: #2D4C3A;
+  font-weight: 700;
+}
+
+/* --------------------------------------------------------------------------
+   4. DESTINATION CARDS with Inline Slider
+   -------------------------------------------------------------------------- */
+.dest-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.dest-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(62, 53, 43, 0.08);
+  border: 1px solid var(--border-card);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: cardFadeIn 0.5s ease forwards;
+}
+
+@keyframes cardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dest-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(62, 53, 43, 0.16);
+  border-color: rgba(197, 160, 89, 0.3);
+}
+
+/* Card Image Slider */
+.dest-card-slider {
+  position: relative;
+  height: 280px;
+  overflow: hidden;
+  background: #D6C9B5;
+}
+
+.dest-card-slides {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.dest-card-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.7s ease;
+  z-index: 1;
+}
+
+.dest-card-slide.active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 2;
+}
+
+.dest-card-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 8s ease;
+}
+
+.dest-card-slide.active img {
+  transform: scale(1.05);
+}
+
+/* Slider Arrows */
+.dest-slide-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: none;
+  color: var(--text-primary);
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.22s ease;
+  opacity: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.dest-card-slider:hover .dest-slide-btn {
+  opacity: 1;
+}
+
+.dest-slide-btn:hover {
+  background: #FFFFFF;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.dest-slide-prev {
+  left: 12px;
+}
+
+.dest-slide-next {
+  right: 12px;
+}
+
+/* Slider Dots */
+.dest-slide-dots {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 10;
+}
+
+.dest-slide-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1.5px solid rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  transition: all 0.22s ease;
+}
+
+.dest-slide-dot.active {
+  background: #FFFFFF;
+  transform: scale(1.3);
+}
+
+/* Category Badge on Card */
+.dest-card-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  z-index: 10;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.dest-card-badge svg {
+  width: 13px;
+  height: 13px;
+  flex-shrink: 0;
+}
+
+.dest-badge-temple {
+  background: rgba(45, 76, 58, 0.85);
+  color: #FFFFFF;
+}
+
+.dest-badge-beach {
+  background: rgba(30, 90, 140, 0.82);
+  color: #FFFFFF;
+}
+
+.dest-badge-nature {
+  background: rgba(50, 130, 60, 0.82);
+  color: #FFFFFF;
+}
+
+.dest-badge-checkin {
+  background: rgba(197, 100, 30, 0.82);
+  color: #FFFFFF;
+}
+
+.dest-badge-activity {
+  background: rgba(130, 60, 140, 0.82);
+  color: #FFFFFF;
+}
+
+/* Card Body */
+.dest-card-body {
+  padding: 20px 22px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dest-card-location {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.dest-card-location svg {
+  width: 13px;
+  height: 13px;
+  color: #C5A059;
+  flex-shrink: 0;
+}
+
+.dest-card-title {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.35;
+  margin: 0;
+}
+
+.dest-card-desc {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.dest-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 4px;
+  flex-wrap: wrap;
+}
+
+.dest-card-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.dest-tag {
+  display: inline-block;
+  padding: 3px 10px;
+  background: var(--bg-pill);
+  border-radius: 10px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-light);
+}
+
+.dest-read-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 22px;
+  border-radius: 30px;
+  background: #F5EFE6;
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 600;
+  border: 1px solid rgba(142, 136, 120, 0.25);
+  cursor: pointer;
+  transition: all 0.22s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.dest-read-btn:hover {
+  background: #2D4C3A;
+  color: #FFFFFF;
+  border-color: #2D4C3A;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(45, 76, 58, 0.3);
+}
+
+/* No results state */
+.dest-no-results {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-secondary);
+}
+
+.dest-no-results-icon {
+  font-size: 3rem;
+  margin-bottom: 16px;
+}
+
+.dest-no-results h3 {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.dest-no-results p {
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+
+/* --------------------------------------------------------------------------
+   5. RESPONSIVE - Destinations Page
+   -------------------------------------------------------------------------- */
+@media (max-width: 991px) {
+  .dest-hero-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .dest-hero-right {
+    max-width: 500px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .dest-hero-title {
+    font-size: 2.6rem;
+  }
+
+  .dest-cards-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .dest-card-slider {
+    height: 220px;
+  }
+}
+
+@media (max-width: 767px) {
+  .dest-hero-section {
+    padding: 36px 0 36px;
+  }
+
+  .dest-hero-container {
+    gap: 28px;
+  }
+
+  .dest-hero-title {
+    font-size: 2rem;
+  }
+
+  .dest-hero-right {
+    display: none;
+    /* hide collage on mobile for cleanliness */
+  }
+
+  .dest-category-filters {
+    gap: 8px;
+  }
+
+  .dest-category-pill {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+
+  .dest-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .dest-card-slider {
+    height: 230px;
+  }
+
+  .dest-grid-section {
+    padding: 36px 0 60px;
+  }
+
+  .dest-grid-title {
+    font-size: 1.6rem;
+  }
+
+  /* Always show arrows on touch */
+  .dest-slide-btn {
+    opacity: 1 !important;
+    width: 34px;
+    height: 34px;
+    font-size: 0.9rem;
+  }
+
+  .dest-card-body {
+    padding: 16px 18px 18px;
+  }
+
+  .dest-card-title {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dest-search-box {
+    max-width: 100%;
+  }
+
+  .dest-card-slider {
+    height: 200px;
+  }
+}

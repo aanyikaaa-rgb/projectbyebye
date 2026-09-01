@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="เที่ยวเมืองไทย สวยทุกที่..มีเสน่ห์ไม่ซ้ำใคร - สัมผัสวัฒนธรรม ธรรมชาติ และสถานที่ท่องเที่ยวยอดนิยมทั่วไทย">
+  <meta name="keywords"
+    content="เที่ยวเมืองไทย, ท่องเที่ยวไทย, เมืองเหนือล้านนา, กรุงเทพ, กระบี่, เชียงใหม่, อ่าวมาหยา, พระบรมมหาราชวัง, ดอยสุเทพ">
+  <title>เที่ยวเมืองไทย - สวยทุกที่..มีเสน่ห์ไม่ซ้ำใคร</title>
+
+  <!-- Google Fonts Preconnect & Stylesheets -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+  <!-- =========================================================================
+       1. HEADER & NAVIGATION
+       ========================================================================= -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-container">
+
+      <!-- Brand Logo (Circle Icon as in Design) -->
+      <a href="#heroSection" class="header-brand" aria-label="เที่ยวเมืองไทย หน้าแรก">
+        <div class="brand-logo-circle">
+          <!-- Mountain & Nature Scenic Icon -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M3 18l5-7 4 5 3-4 6 6H3z" />
+            <circle cx="8" cy="8" r="2.5" />
+          </svg>
+        </div>
+        <span class="brand-text">เที่ยวเมืองไทย</span>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="header-nav" aria-label="Main Navigation">
+        <a href="index.html" class="header-nav-link active">หน้าแรก</a>
+        <a href="destinations.html" class="header-nav-link">สถานที่ท่องเที่ยว</a>
+        <a href="trips.html" class="header-nav-link">ทริปแนะนำ</a>
+        <a href="hotels.html" class="header-nav-link">ที่พักและร้านอาหาร</a>
+        <a href="travel-info.html" class="header-nav-link">ข้อมูลการเดินทาง</a>
+      </nav>
+
+      <!-- Contact Pill Button on Right -->
+      <button class="header-contact-btn" data-dest="contact-us" aria-label="ติดต่อเรา">
+        <!-- Phone / Contact Icon -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round">
+          <path
+            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+          </path>
+        </svg>
+        <span>ติดต่อ</span>
+      </button>
+
+      <!-- Mobile Top Bar with Hamburger Button -->
+      <div class="mobile-top-bar">
+        <a href="#heroSection" class="header-brand" aria-label="เที่ยวเมืองไทย หน้าแรก" style="display: flex;">
+          <div class="brand-logo-circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M3 18l5-7 4 5 3-4 6 6H3z" />
+              <circle cx="8" cy="8" r="2.5" />
+            </svg>
+          </div>
+          <span
+            style="font-family: var(--font-heading); font-weight: 700; font-size: 1.15rem; color: var(--text-primary);">เที่ยวเมืองไทย</span>
+        </a>
+
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="เปิดเมนูนำทาง" aria-expanded="false">
+          <div class="hamburger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Overlay & Menu -->
+  <div class="mobile-drawer-overlay" id="drawerOverlay"></div>
+  <aside class="mobile-drawer" id="mobileDrawer" aria-label="Mobile Navigation Drawer">
+    <div>
+      <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 28px;">
+        <div class="brand-logo-circle" style="width: 40px; height: 40px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" style="width: 22px; height: 22px;">
+            <path d="M3 18l5-7 4 5 3-4 6 6H3z" />
+            <circle cx="8" cy="8" r="2.5" />
+          </svg>
+        </div>
+        <span
+          style="font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: var(--text-primary);">เที่ยวเมืองไทย</span>
+      </div>
+
+      <ul class="drawer-nav-list">
+        <li><a href="index.html" class="drawer-nav-link active">หน้าแรก</a></li>
+        <li><a href="destinations.html" class="drawer-nav-link">สถานที่ท่องเที่ยว</a></li>
+        <li><a href="trips.html" class="drawer-nav-link">ทริปแนะนำ</a></li>
+        <li><a href="hotels.html" class="drawer-nav-link">ที่พักและร้านอาหาร</a></li>
+        <li><a href="travel-info.html" class="drawer-nav-link">ข้อมูลการเดินทาง</a></li>
+        <li><a href="#contactSection" class="drawer-nav-link">ติดต่อเรา</a></li>
+      </ul>
+    </div>
+
+    <div class="drawer-footer">
+      <p style="font-size: 0.85rem; color: var(--text-secondary);">สัมผัสเสน่ห์ท่องเที่ยวทั่วไทย</p>
+      <div class="drawer-socials">
+        <button class="social-icon-btn" aria-label="Facebook"
+          style="background: var(--bg-pill); color: var(--text-primary);">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+          </svg>
+        </button>
+        <button class="social-icon-btn" aria-label="LINE"
+          style="background: var(--bg-pill); color: var(--text-primary);">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+          </svg>
+        </button>
+        <button class="social-icon-btn" aria-label="TikTok"
+          style="background: var(--bg-pill); color: var(--text-primary);">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5v3a8 8 0 0 1-5-1.7V16a7 7 0 1 1-7-7c.7 0 1.4.1 2 .3V9z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- =========================================================================
+       2. FULL-WIDTH HERO BANNER & CINEMATIC SLIDER (เคลื่อนเปลี่ยนภาพอย่างนุ่มนวล)
+       ========================================================================= -->
+  <main>
+    <section class="hero-fullwidth-section" id="heroSection">
+
+      <!-- Multi-Slide Backgrounds & Content Wrapper -->
+      <div class="hero-slides-wrapper" id="heroSlidesWrapper">
+
+        <!-- Slide 1: เมืองเหนือล้านนา (วัดอรุณราชวราราม เชียงใหม่) -->
+        <div class="hero-slide active" data-slide="0">
+          <div class="hero-slide-bg" style="background-image: url('assets/images/wat_arun.jpg');"></div>
+          <div class="hero-center-content">
+            <div class="hero-diamond-icon">
+              <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M50 10 L85 50 L50 90 L15 50 Z" fill="rgba(197, 160, 89, 0.4)" />
+                <circle cx="50" cy="50" r="10" fill="currentColor" />
+              </svg>
+            </div>
+            <h1 class="hero-main-title">เมืองเหนือล้านนา</h1>
+            <p class="hero-main-subtitle">ชมศิลปวัฒนธรรม ท้าลมหนาวบนดอยสูง</p>
+            <div class="hero-tagline-badge">ไหว้พระธาตุดอยสุเทพ เสริมสิริมงคล ชมวิวเชียงใหม่ 360 องศา</div>
+          </div>
+        </div>
+
+        <!-- Slide 2: เที่ยวเมืองไทย (พระบรมมหาราชวัง กรุงเทพฯ) -->
+        <div class="hero-slide" data-slide="1">
+          <div class="hero-slide-bg" style="background-image: url('assets/images/grand_palace.jpg');"></div>
+          <div class="hero-center-content">
+            <div class="hero-diamond-icon">
+              <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M50 10 L85 50 L50 90 L15 50 Z" fill="rgba(197, 160, 89, 0.4)" />
+                <circle cx="50" cy="50" r="10" fill="currentColor" />
+              </svg>
+            </div>
+            <h1 class="hero-main-title">เที่ยวเมืองไทย</h1>
+            <p class="hero-main-subtitle">สวยทุกที่..มีเสน่ห์ไม่ซ้ำใคร</p>
+            <div class="hero-tagline-badge">สัมผัสวัฒนธรรม ธรรมชาติ และรอยยิ้มแห่งความประทับใจ</div>
+          </div>
+        </div>
+
+        <!-- Slide 3: สวรรค์ทะเลใต้ (หมู่เกาะพีพี กระบี่) -->
+        <div class="hero-slide" data-slide="2">
+          <div class="hero-slide-bg" style="background-image: url('assets/images/phi_phi.jpg');"></div>
+          <div class="hero-center-content">
+            <div class="hero-diamond-icon">
+              <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M50 10 L85 50 L50 90 L15 50 Z" fill="rgba(197, 160, 89, 0.4)" />
+                <circle cx="50" cy="50" r="10" fill="currentColor" />
+              </svg>
+            </div>
+            <h1 class="hero-main-title">สวรรค์ทะเลใต้</h1>
+            <p class="hero-main-subtitle">พักผ่อนหย่อนใจไปกับสายลมและเกลียวคลื่น</p>
+            <div class="hero-tagline-badge">อันดามันและอ่าวไทย น้ำใส หาดทรายขาวระดับโลก</div>
+          </div>
+        </div>
+
+        <!-- Slide 4: มนต์เสน่ห์เมืองหลวง (วัดอรุณราชวราราม) -->
+        <div class="hero-slide" data-slide="3">
+          <div class="hero-slide-bg" style="background-image: url('assets/images/wat_arun.jpg');"></div>
+          <div class="hero-center-content">
+            <div class="hero-diamond-icon">
+              <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M50 10 L85 50 L50 90 L15 50 Z" fill="rgba(197, 160, 89, 0.4)" />
+                <circle cx="50" cy="50" r="10" fill="currentColor" />
+              </svg>
+            </div>
+            <h1 class="hero-main-title">มนต์เสน่ห์เมืองหลวง</h1>
+            <p class="hero-main-subtitle">วิถีริมน้ำเจ้าพระยา ศิลปกรรมอันวิจิตร</p>
+            <div class="hero-tagline-badge">ชมพระปรางค์วัดอรุณฯ ยามอัสดง ลิ้มลองสตรีทฟู้ดระดับโลก</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Vignette & Smooth Bottom Gradient Overlay -->
+      <div class="hero-fullwidth-overlay"></div>
+
+      <!-- Carousel Navigation Arrows -->
+      <button class="hero-arrow-btn hero-arrow-prev" id="heroPrevBtn" aria-label="สไลด์ก่อนหน้า">&#10094;</button>
+      <button class="hero-arrow-btn hero-arrow-next" id="heroNextBtn" aria-label="สไลด์ถัดไป">&#10095;</button>
+
+      <!-- Floating Bottom Glass Card (5 Feature Buttons) -->
+      <div class="hero-features-floating-card">
+        <div class="hero-features-bar-grid">
+
+          <!-- 1. วัฒนธรรม ประเพณี -->
+          <button class="feature-bar-item" data-dest="feature-culture" title="คลิกเพื่อดูข้อมูล วัฒนธรรม ประเพณี">
+            <div class="feature-bar-icon-circle">
+              <!-- Temple / Heritage Icon -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                <polyline points="9 22 9 12 15 12 15 22" />
+              </svg>
+            </div>
+            <span class="feature-bar-label">วัฒนธรรม<br>ประเพณี</span>
+          </button>
+
+          <!-- 2. ธรรมชาติ เขียวขจี -->
+          <button class="feature-bar-item" data-dest="feature-nature" title="คลิกเพื่อดูข้อมูล ธรรมชาติ เขียวขจี">
+            <div class="feature-bar-icon-circle">
+              <!-- Mountain Nature Icon -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M8 3l4 8 5-5 5 15H2L8 3z" />
+              </svg>
+            </div>
+            <span class="feature-bar-label">ธรรมชาติ<br>เขียวขจี</span>
+          </button>
+
+          <!-- 3. สถานที่ท่องเที่ยว หลากหลาย -->
+          <button class="feature-bar-item" data-dest="feature-attractions"
+            title="คลิกเพื่อดูข้อมูล สถานที่ท่องเที่ยว หลากหลาย">
+            <div class="feature-bar-icon-circle">
+              <!-- Camera Travel Icon -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+                <circle cx="12" cy="13" r="4" />
+              </svg>
+            </div>
+            <span class="feature-bar-label">สถานที่ท่องเที่ยว<br>หลากหลาย</span>
+          </button>
+
+          <!-- 4. อาหารอร่อย ขึ้นชื่อ -->
+          <button class="feature-bar-item active" data-dest="feature-food"
+            title="คลิกเพื่อดูข้อมูล อาหารอร่อย ขึ้นชื่อ">
+            <div class="feature-bar-icon-circle">
+              <!-- Utensils / Food Icon -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M18 2v20M2 18h4a4 4 0 0 0 4-4V2M6 2v6M2 2v6M10 2v6" />
+              </svg>
+            </div>
+            <span class="feature-bar-label">อาหารอร่อย<br>ขึ้นชื่อ</span>
+          </button>
+
+          <!-- 5. ผู้คนน่ารัก เป็นกันเอง -->
+          <button class="feature-bar-item" data-dest="feature-people" title="คลิกเพื่อดูข้อมูล ผู้คนน่ารัก เป็นกันเอง">
+            <div class="feature-bar-icon-circle">
+              <!-- Friendly Smile Icon -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M8 14s1.5 2 4 2 4-2 4-2" />
+                <line x1="9" y1="9" x2="9.01" y2="9" />
+                <line x1="15" y1="9" x2="15.01" y2="9" />
+              </svg>
+            </div>
+            <span class="feature-bar-label">ผู้คนน่ารัก<br>เป็นกันเอง</span>
+          </button>
+
+        </div>
+      </div>
+
+      <!-- Carousel Dots Indicator -->
+      <div class="hero-banner-dots">
+        <button class="banner-dot active" data-index="0" aria-label="สไลด์ 1"></button>
+        <button class="banner-dot" data-index="1" aria-label="สไลด์ 2"></button>
+        <button class="banner-dot" data-index="2" aria-label="สไลด์ 3"></button>
+        <button class="banner-dot" data-index="3" aria-label="สไลด์ 4"></button>
+      </div>
+
+    </section>
+
+    <!-- =========================================================================
+         3. POPULAR DESTINATIONS (แนะนำสถานที่ท่องเที่ยวยอดนิยม)
+         ========================================================================= -->
+    <section class="destinations-section" id="destinations">
+      <div class="container">
+
+        <div class="section-header reveal reveal-up">
+          <h2 class="section-title">แนะนำสถานที่ท่องเที่ยวยอดนิยม</h2>
+        </div>
+
+        <div class="destinations-grid">
+
+          <!-- Destination Card 1: พระราชวังหลวง กรุงเทพฯ -->
+          <div class="destination-card reveal reveal-up delay-1">
+            <div class="dest-img-wrap">
+              <img src="assets/images/grand_palace.jpg" alt="พระราชวังหลวง จังหวัดกรุงเทพฯ" loading="lazy">
+            </div>
+            <h3 class="dest-title">พระราชวังหลวง จังหวัดกรุงเทพฯ</h3>
+            <button class="dest-btn btn-ripple" data-dest="grand-palace"
+              aria-label="ดูคำอธิบาย พระราชวังหลวง">คำอธิบาย</button>
+          </div>
+
+          <!-- Destination Card 2: หมู่เกาะพีพี กระบี่ -->
+          <div class="destination-card reveal reveal-up delay-2">
+            <div class="dest-img-wrap">
+              <img src="assets/images/phi_phi.jpg" alt="หมู่เกาะพีพี จังหวัดกระบี่" loading="lazy">
+            </div>
+            <h3 class="dest-title">หมู่เกาะพีพี จังหวัดกระบี่</h3>
+            <button class="dest-btn btn-ripple" data-dest="phi-phi"
+              aria-label="ดูคำอธิบาย หมู่เกาะพีพี">คำอธิบาย</button>
+          </div>
+
+          <!-- Destination Card 3: วัดคู่บ้านคู่เมือง เชียงใหม่ -->
+          <div class="destination-card reveal reveal-up delay-3">
+            <div class="dest-img-wrap">
+              <img src="assets/images/wat_arun.jpg" alt="วัดคู่บ้านคู่เมือง จังหวัดเชียงใหม่" loading="lazy">
+            </div>
+            <h3 class="dest-title">วัดคู่บ้านคู่เมือง จังหวัดเชียงใหม่</h3>
+            <button class="dest-btn btn-ripple" data-dest="wat-arun"
+              aria-label="ดูคำอธิบาย วัดอรุณราชวราราม">คำอธิบาย</button>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         4. LATEST TRIP ARTICLES (บทความทริปแนะนำล่าสุด)
+         ========================================================================= -->
+    <section class="articles-section" id="articles">
+      <div class="container">
+
+        <div class="section-header reveal reveal-up">
+          <h2 class="section-title">บทความทริปแนะนำล่าสุด</h2>
+        </div>
+
+        <div class="articles-list">
+
+          <!-- Article 1: อ่าวมาหยา สวรรค์แห่งทะเลอันดามัน -->
+          <article class="article-row-card reveal reveal-left delay-1">
+            <div class="article-thumb-wrap">
+              <img src="assets/images/maya_bay.jpg" alt="อ่าวมาหยา สวรรค์แห่งทะเลอันดามัน" loading="lazy">
+            </div>
+            <div class="article-content-body">
+              <h3 class="article-heading">เที่ยวอ่าวมาหยา สวรรค์แห่งทะเลอันดามัน</h3>
+              <p class="article-desc">
+                สัมผัสหาดทรายขาวละเอียด น้ำทะเลสีฟ้าใสราวคริสตัล และทัศนียภาพของหน้าผาหินปูนที่โอบล้อมอ่าวไว้อย่างสวยงาม
+                เหมาะสำหรับผู้ที่ต้องการพักผ่อนท่ามกลางธรรมชาติและเก็บภาพความประทับใจจากหนึ่งในสถานที่ท่องเที่ยวชื่อดังของประเทศไทย
+                <span class="read-more-tag" data-dest="maya-bay" role="button" tabindex="0">[อ่านต่อ]</span>
+              </p>
+            </div>
+          </article>
+
+          <!-- Article 2: ดอยสุเทพ แลนด์มาร์กคู่เมืองเชียงใหม่ -->
+          <article class="article-row-card reveal reveal-right delay-2">
+            <div class="article-thumb-wrap">
+              <img src="assets/images/railay_beach.jpg" alt="ดอยสุเทพ แลนด์มาร์กคู่เมืองเชียงใหม่" loading="lazy">
+            </div>
+            <div class="article-content-body">
+              <h3 class="article-heading">ชมเสน่ห์ดอยสุเทพ แลนด์มาร์กคู่เมืองเชียงใหม่</h3>
+              <p class="article-desc">
+                เดินทางสู่ยอดดอยเพื่อสักการะวัดอรุณราชวราราม พร้อมชมวิวเมืองเชียงใหม่แบบพาโนรามา
+                สัมผัสบรรยากาศอันเงียบสงบ ศิลปวัฒนธรรมล้านนา และความงดงามของธรรมชาติที่รายล้อมตลอดเส้นทาง
+                <span class="read-more-tag" data-dest="railay-beach" role="button" tabindex="0">[อ่านต่อ]</span>
+              </p>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       5. INTERACTIVE MODAL DIALOG (คำอธิบาย / Quick View)
+       ========================================================================= -->
+  <div class="modal-overlay" id="destModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="ปิดหน้าต่าง">&times;</button>
+
+      <div class="modal-image-wrap">
+        <img id="modalImg" src="assets/images/grand_palace.jpg" alt="Destination Preview">
+      </div>
+
+      <div class="modal-body-content">
+        <span class="modal-badge" id="modalBadge">มรดกทางวัฒนธรรม</span>
+        <h3 class="modal-title" id="modalTitle">ชื่อสถานที่ท่องเที่ยว</h3>
+        <p class="modal-text" id="modalDesc">คำอธิบายสถานที่ท่องเที่ยว...</p>
+
+        <div class="modal-highlights">
+          <h4 style="font-size: 0.95rem; font-weight: 600; margin-bottom: 10px; color: var(--text-primary);">
+            ไฮไลต์และข้อมูลสำคัญ:</h4>
+          <div id="modalHighlightsList"></div>
+        </div>
+
+        <div style="text-align: right;">
+          <button class="dest-btn btn-ripple"
+            onclick="document.getElementById('destModal').classList.remove('active'); document.body.classList.remove('drawer-open');">ปิดหน้าต่าง</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       6. SITE FOOTER
+       ========================================================================= -->
+  <footer class="site-footer" id="footer">
+    <div class="container">
+      <div class="footer-content-grid">
+
+        <!-- Left: Logo & Legal Notice -->
+        <div class="footer-col-left">
+          <div class="footer-logo-row">
+            <div class="brand-logo-circle"
+              style="width: 32px; height: 32px; border-color: rgba(255, 255, 255, 0.4); background: rgba(255, 255, 255, 0.15); color: #FFFFFF;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" style="width: 18px; height: 18px;">
+                <path d="M3 18l5-7 4 5 3-4 6 6H3z" />
+                <circle cx="8" cy="8" r="2.5" />
+              </svg>
+            </div>
+            <span>เที่ยวเมืองไทย (Travel Thailand)</span>
+          </div>
+          <div class="footer-legal-links">
+            <button class="footer-legal-link" data-dest="privacy-policy">นโยบายความเป็นส่วนตัว (Privacy Policy)</button>
+            | <button class="footer-legal-link" data-dest="terms-of-service">ข้อตกลงการใช้งาน (Terms of
+              Services)</button>
+          </div>
+          <div class="footer-copyright">
+            &copy; 2026 (toeg.com). All rights reserved.
+          </div>
+        </div>
+
+        <!-- Center: Quick Links -->
+        <div class="footer-col-center">
+          <a href="index.html" class="footer-quick-link">• หน้าแรก</a>
+          <a href="destinations.html" class="footer-quick-link">• สถานที่ท่องเที่ยว</a>
+          <a href="trips.html" class="footer-quick-link">• ทริปแนะนำ</a>
+          <a href="hotels.html" class="footer-quick-link">• ที่พักและร้านอาหาร</a>
+          <a href="travel-info.html" class="footer-quick-link">• ข้อมูลการเดินทาง</a>
+        </div>
+
+        <!-- Right: Contact & Socials -->
+        <div class="footer-col-right">
+          <div class="footer-contact-title">ติดต่อเรา (Contact Us)</div>
+          <div class="footer-social-icons">
+
+            <!-- Facebook -->
+            <button class="social-icon-btn" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+              </svg>
+            </button>
+
+            <!-- LINE -->
+            <button class="social-icon-btn" aria-label="LINE">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+              </svg>
+            </button>
+
+            <!-- TikTok -->
+            <button class="social-icon-btn" aria-label="TikTok">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5v3a8 8 0 0 1-5-1.7V16a7 7 0 1 1-7-7c.7 0 1.4.1 2 .3V9z" />
+              </svg>
+            </button>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+
+</html>
